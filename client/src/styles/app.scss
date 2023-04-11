@@ -1,0 +1,548 @@
+@import "./variables";
+@import "./mixins";
+
+@include normalize();
+
+.container {
+  @include flex-center();
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100% - 50px);
+  height: fit-content;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  height: 50px;
+  margin: 0 50px;
+  box-sizing: border-box;
+
+  .logo {
+    img {
+      height: 20px;
+      width: auto;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      margin: 0 10px;
+      padding: 10px 15px;
+      transition: 0.3s ease;
+      cursor: pointer;
+      font-weight: 600;
+
+      &:hover {
+        background-color: rgba($secondary-color-1, 0.2);
+      }
+    }
+  }
+}
+
+section {
+  // height: 100vh;
+  // padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    text-align: center;
+  }
+  // align-items: center;
+}
+
+.container section form {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  // grid-template-rows: repeat(5, auto);
+  grid-gap: 1.5rem;
+  justify-items: stretch;
+
+  .grid-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    &.description,
+    &.submit {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    input,
+    textarea {
+      box-sizing: inherit;
+      font-size: 1rem;
+      min-width: 350px;
+      padding: 1rem;
+      border: 1px solid $secondary-color-1;
+      border-radius: 0.5rem;
+
+      &:focus,
+      &:hover {
+        @include mild-shadow();
+      }
+    }
+
+    textarea {
+      width: 100%;
+      resize: none;
+      @include hide-scrollbar();
+    }
+    input[type="submit"] {
+      width: 100%;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: $semibold;
+      background-color: $secondary-color-1;
+      cursor: pointer;
+    }
+
+    span {
+      font-size: 1rem;
+      text-align: center;
+      color: $secondary-color-2;
+      width: 100%;
+      align-self: flex-start;
+      margin-top: 5px;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  width: calc(250px + 4rem);
+  background-color: white;
+  padding: 2rem;
+  padding-bottom: 2.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  @include mild-shadow();
+
+  .title {
+    font-size: 1.6rem;
+    font-weight: $semibold;
+  }
+
+  .host {
+    font-size: 1.2rem;
+    font-weight: $regular;
+    margin: 0.5rem 0;
+    span {
+      font-weight: $semibold;
+    }
+  }
+
+  .goal {
+    font-size: 1.2rem;
+    font-weight: $regular;
+    margin: 0.7rem 0;
+    span {
+      color: $secondary-color-2;
+      font-weight: $semibold;
+    }
+  }
+
+  .description {
+    font-size: 1rem;
+    font-weight: $regular;
+    margin: 0.7rem 0;
+    text-align: justify;
+  }
+
+  .donate {
+    font-size: 1.4rem;
+    font-weight: $semibold;
+    background: $secondary-color-2;
+    color: $white;
+    padding: 0.4rem 0.8rem;
+    width: fit-content;
+    border-radius: 0.3rem;
+    margin-top: 0.7rem;
+  }
+
+  .progress-bar,
+  .progress {
+    height: 1rem;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .progress {
+    background-color: $secondary-color-1;
+    width: 0;
+  }
+}
+
+.card-grid {
+  height: calc(100% - 50px);
+  width: inherit;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  // grid-auto-rows: minmax(200px, auto);
+  grid-gap: 2rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+.donate-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 70vh;
+  width: calc(100% - 100px);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  @include mild-shadow();
+
+  .left,
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .left {
+    flex: 3;
+    .title {
+      font-size: 2.2rem;
+      font-weight: $semibold;
+    }
+    .description {
+      text-align: justify;
+      font-size: 1.2rem;
+      max-height: 50vh;
+      overflow-y: scroll;
+      padding-right: 7px;
+      margin-bottom: 1rem;
+      @include custom-scrollbar($scroll-bg-color: white);
+    }
+
+    .donators {
+      span {
+        color: $secondary-color-2;
+      }
+    }
+  }
+
+  .right {
+    flex: 2;
+    align-items: flex-end;
+
+    .top {
+      text-align: right;
+      .host {
+        font-size: 1.6rem;
+        span {
+          font-weight: $semibold;
+        }
+      }
+      .recipient {
+        font-size: 0.9rem;
+      }
+    }
+
+    .bottom {
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .notes {
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+
+          .goalAmount span,
+          .minDonation span,
+          .expiryDate span {
+            font-weight: $semibold;
+            color: $secondary-color-2;
+          }
+        }
+
+        span {
+          color: red;
+        }
+
+        input {
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          margin-top: 1rem;
+          font-size: 1.2rem;
+          text-align: center;
+          border: none;
+        }
+
+        .donationAmount {
+          border: 2px solid $white;
+          color: $secondary-color-1;
+          font-weight: $semibold;
+
+          &::placeholder {
+            color: black;
+            opacity: 0.4;
+            font-weight: $regular;
+          }
+
+          &:focus {
+            border: 2px solid $secondary-color-1;
+          }
+
+          &.active {
+            border: 2px solid $secondary-color-1;
+          }
+        }
+
+        .submit {
+          font-size: 1.4rem;
+          font-weight: $semibold;
+          background: $secondary-color-2;
+          color: $white;
+          padding: 0.4rem 0.8rem;
+          border-radius: 0.3rem;
+          margin-top: 0.7rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.search-bar-container {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  min-width: 350px;
+  justify-content: space-between;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  &.active,
+  &:hover,
+  &:focus-within {
+    @include mild-shadow();
+  }
+
+  .search-bar {
+    width: 100%;
+    border: none;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  .icon {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+.txnCards {
+  width: 80%;
+  margin-top: 2rem;
+  .txnCard {
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    justify-content: space-between;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    border: 1px solid $secondary-color-1;
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &:hover {
+      @include mild-shadow();
+    }
+  }
+
+  .error {
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    justify-content: space-between;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    border: 1px solid $secondary-color-2;
+
+    h1 {
+      text-align: center;
+      color: $secondary-color-2;
+    }
+
+    &:hover {
+      @include mild-shadow();
+    }
+  }
+}
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: 5rem;
+  min-height: 90%;
+  height: auto;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  .circular {
+    animation: rotate 1s linear infinite;
+    height: 100%;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+    }
+  }
+
+  @keyframes color {
+    100%,
+    0% {
+      stroke: $secondary-color-1;
+    }
+    40% {
+      stroke: $secondary-color-2;
+    }
+    66% {
+      stroke: $secondary-color-1;
+    }
+    80%,
+    90% {
+      stroke: $secondary-color-2;
+    }
+  }
+}
+
+.txnLoader {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba($white, 0.7);
+
+  p {
+    @include flex-center();
+    position: absolute;
+    height: 110vh;
+    width: 100%;
+    top: 0;
+    font-size: 1.5rem;
+    font-weight: $semibold;
+  }
+}
+
+.home-content {
+  text-align: center;
+  p {
+    font-size: 3rem;
+    color: $secondary-color-2;
+
+    span {
+      color: $primary-color;
+    }
+  }
+  h1 {
+    font-size: 7.5rem;
+    font-weight: $semibold;
+    line-height: 7.5rem;
+    text-transform: uppercase;
+    color: $secondary-color-1;
+  }
+
+  p,
+  p span,
+  h1 {
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out 0s forwards;
+  }
+
+  .first {
+    animation-delay: 0s;
+  }
+
+  .second {
+    animation-delay: 1s;
+  }
+
+  .third {
+    animation-delay: 2s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+}
