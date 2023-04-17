@@ -157,6 +157,11 @@ function Donate() {
                   <div className="donators">
                     {donationMessage()} {heart}
                   </div>
+                  <div> 
+                      <Link to={`/track/${fundraiserDetails.fundraiserAddress}`}>
+                        <button>SEE HISTROY</button>
+                      </Link>
+                  </div>
                 </div>
                 <div className="right">
                   <div className="top">

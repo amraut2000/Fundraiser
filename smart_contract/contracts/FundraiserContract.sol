@@ -74,8 +74,12 @@ contract Fundraiser {
     function getDetails() public payable returns (uint _goalAmount, string memory _hostName, string memory _title, string memory _description, address _fundraiserAddress, uint _fundraiserBalance, uint _stage) {
         bool isExpired = isFundraiserExpired();
         if(isExpired) {
-            stage = Stage.Expired;
-            refundAll();
+            stage = Stage.Complete;
+            isCompleted = true;
+            releaseFunds();
+            //stage = Stage.Expired;  
+            //releaseFunds();
+            //refundAll();
         }
         return (goalAmount, hostName, title, description, address(this), address(this).balance, uint(stage));
     }

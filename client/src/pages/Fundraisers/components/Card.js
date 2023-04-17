@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { Context } from "../../../Context"
+import Fundraiser from "../../../utils/Fundraiser.json"
 
 const Card = (props) => {
   const { id, title, hostName, goalAmount, description, fundraiserBalance } =
@@ -32,6 +33,9 @@ const Card = (props) => {
       </p>
       <a className="donate" href={`/donate/${id}`}>
         Donate
+      </a>
+      <a className="donate" href={`/track/${id}`}>
+        History
       </a>
       <div className="progress-bar"></div>
       <div className="progress" style={{ width: `${progressWidth}%` }}></div>

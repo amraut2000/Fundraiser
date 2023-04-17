@@ -15,7 +15,7 @@ function TxnCard(props) {
   }
 
   const getTime = (timestamp) => {
-    const dateObj = new Date(parseInt(timestamp))
+    const dateObj = new Date(parseInt(timestamp) * 1000)
     const time =
       dateObj.getHours() +
       ":" +

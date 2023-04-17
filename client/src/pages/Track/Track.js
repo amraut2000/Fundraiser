@@ -14,7 +14,7 @@ function Track() {
   useEffect(() => {
     const init = async () => {
       const response = await fetch(
-        `https://api-goerli.etherscan.io/api?module=account&action=txlist&address=${trackAddress}&startblock=0&endblock=99999999&sort=asc&apikey=${process.env.REACT_APP_ETHERSCAN_API_KEY}`
+        `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${trackAddress}&startblock=0&endblock=99999999&sort=asc&apikey=${process.env.REACT_APP_ETHERSCAN_API_KEY}`
       )
       const data = await response.json()
       if (data.status === "1") {
@@ -53,6 +53,9 @@ function Track() {
   return (
     <>
       <div className="container">
+        <div>
+            Enter your address to see transaction history!
+        </div>
         <div
           className={
             searchBarValue !== ""
