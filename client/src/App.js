@@ -11,6 +11,7 @@ import NotFound404 from "./pages/NotFound404/NotFound404"
 import Loader from "./components/Loader"
 import AboutUs from "./pages/Aboutus/AboutUs"
 import ParticleBG from "./components/particle/ParticleBG"
+import HomeIns from "./pages/Instructions/HomeIns"
 
 
 const App = () => {
@@ -48,6 +49,9 @@ const App = () => {
         </Route>
         <Route path="/aboutus">
           <AboutUs></AboutUs>
+        </Route>
+        <Route path="/home-instr">
+          <HomeIns></HomeIns>
         </Route>
         <Route path="/404">
           <NotFound404 />

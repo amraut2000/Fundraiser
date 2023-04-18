@@ -14,21 +14,23 @@ const Home = () => (
         </div>
       </div>
 
-      <div className="container btn-home">
+      <div className="container btn-home" >
         <button className="btn btn-info">
-          <Link to={`/browse`}>Want to Donate ?</Link>{" "}
+          <Link to={`/browse`} style={{color:"black"}}>Want to Donate ?</Link>{" "}
         </button>
         <button className="btn btn-info">
-          <Link to={`/create`}>Raise Funds!</Link>{" "}
+          <Link to={`/create`} style={{color:"black"}}>Raise Funds!</Link>{" "}
         </button>
         <button className="btn btn-info">
-          <Link to={`/track`}>Track Your History.</Link>{" "}
+          <Link to={`/track`} style={{color:"black"}}>Track Your History.</Link>{" "}
         </button>
         <button className="btn btn-info">
-          <Link to={`/aboutus`}>About us</Link>{" "}
+          <Link to={`/aboutus`} style={{color:"black"}}>About us</Link>{" "}
         </button>
         <div className="instr">
+         <Link to={'/home-instr'}>
           <buttton className="btn btn-warning " data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?">Need Help ?</buttton>
+         </Link>
 
         </div>
       </div>
