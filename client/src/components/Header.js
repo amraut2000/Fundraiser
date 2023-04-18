@@ -6,7 +6,7 @@ const Header = () => (
     <>
     <nav>
         <div className="logo">
-            <Link to="/"><img src={logo} alt="Logo"/></Link>
+            <Link to="/"><img src={logo} alt="Logo"  /></Link>
         </div>
         <ul>
             <li>
@@ -21,7 +21,11 @@ const Header = () => (
             <li>
                 <Link to="/track">Track Your History</Link>
             </li>
+            <li>
+                <Link to="/aboutus">About Us</Link>
+            </li>
         </ul>
+
     </nav>
     </>
 )

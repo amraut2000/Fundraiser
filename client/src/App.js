@@ -9,19 +9,26 @@ import Track from "./pages/Track/Track"
 import Donate from "./pages/Donate/Donate"
 import NotFound404 from "./pages/NotFound404/NotFound404"
 import Loader from "./components/Loader"
+import AboutUs from "./pages/Aboutus/AboutUs"
+import ParticleBG from "./components/particle/ParticleBG"
+
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
-
+  
   useEffect(() => {
     setIsLoading(false)
   }, [])
-
+  
   return isLoading ? (
+    
     <Loader />
-  ) : (
-    <>
+    ) : (
+      
+      <>
+    
       <Header />
+
 
       <Switch>
         <Route exact path="/">
@@ -39,12 +46,17 @@ const App = () => {
         <Route path="/track/:trackAddress?">
           <Track />
         </Route>
+        <Route path="/aboutus">
+          <AboutUs></AboutUs>
+        </Route>
         <Route path="/404">
           <NotFound404 />
         </Route>
         <Redirect to="/404" />
       </Switch>
+      
     </>
+
   )
 }
 

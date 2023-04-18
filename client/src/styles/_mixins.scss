@@ -72,15 +72,15 @@
     @include custom-scrollbar($scroll-bg-color: $white);
   }
 
-  a,
-  li,
+  a,li,
   p,
   h1,
   h2,
   h3,
   h4,
   h5 {
-    color: $primary-color;
+    // color: $primary-color;
+    color: white;
     margin: 0;
     line-height: 1.3;
   }
@@ -93,6 +93,7 @@
 
   ul,
   li {
+
     list-style: none;
     padding: 0;
     margin: 0;
@@ -105,6 +106,7 @@
   input,
   textarea {
     font-family: "Titillium Web", sans-serif;
+    border: 2px solid blueviolet;
   }
 
   input::-webkit-outer-spin-button,

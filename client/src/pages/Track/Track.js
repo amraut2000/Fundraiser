@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react"
 import { useParams, Link } from "react-router-dom"
 import TxnCard from "./components/TxnCard"
 import Loader from "../../components/Loader"
-
+import '../Track/TrackStyle.css'
 function Track() {
   const { trackAddress } = useParams()
   const [result, setResult] = useState()
@@ -53,9 +53,9 @@ function Track() {
   return (
     <>
       <div className="container">
-        <div>
+        {/* <div>
             Enter your address to see transaction history!
-        </div>
+        </div> */}
         <div
           className={
             searchBarValue !== ""
@@ -71,6 +71,7 @@ function Track() {
             onKeyDown={_handleKeyDown}
             id="search-bar"
             ref={searchBar}
+            placeholder="Enter your address to see transaction history!"
           />
           <Link
             ref={searchIcon}
