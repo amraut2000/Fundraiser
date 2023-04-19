@@ -21,7 +21,7 @@ nav {
   height: 50px;
   margin: 0px;
   box-sizing: border-box;
-  border-bottom: 2px solid white;
+  background-color: #cce2f6;
   // border-radius: 1vh;
   // background-color: #572cd9;
   .logo {
@@ -29,7 +29,7 @@ nav {
       margin-left: 15px;
       height: 20px;
       width: auto;
-      filter: invert(1);
+      // filter: invert(1);
     }
   }
 
@@ -539,7 +539,7 @@ section {
   }
 
   .second {
-    color: white;
+    color: black;
     animation-delay: 1s;
   }
 
