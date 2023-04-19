@@ -1,0 +1,40 @@
+.main1{
+    /* margin-top: 25px; */
+    /* margin-left: 20px; */
+    border: 2px solid gray;
+    height: 180px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* width: 500px; */
+    /* border-radius: 30px; */
+    margin-bottom: 20px;
+}
+.abtHead{
+    font-size: 100px;
+}
+.abtbody{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.abtbody p{
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: 400px;
+}
+.dev{
+    display: flex;
+    flex-direction: row;
+}
+.dev li{
+    width: 50px;
+    margin:20px 120px;
+    justify-content: space-evenly;
+}
+.team{
+    width: 200px;
+}

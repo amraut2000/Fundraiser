@@ -10,7 +10,6 @@ import Donate from "./pages/Donate/Donate"
 import NotFound404 from "./pages/NotFound404/NotFound404"
 import Loader from "./components/Loader"
 import AboutUs from "./pages/Aboutus/AboutUs"
-import ParticleBG from "./components/particle/ParticleBG"
 import HomeIns from "./pages/Instructions/HomeIns"
 
 
