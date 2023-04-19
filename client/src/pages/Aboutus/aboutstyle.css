@@ -2,6 +2,7 @@
     /* margin-top: 25px; */
     /* margin-left: 20px; */
     border: 2px solid gray;
+    border-top: 0;
     height: 180px;
     justify-content: center;
     align-items: center;
