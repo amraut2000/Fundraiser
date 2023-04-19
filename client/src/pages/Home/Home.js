@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import "../Home/homeStyle.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const Home = () => (
