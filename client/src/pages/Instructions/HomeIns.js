@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react"
 import "../../pages/Instructions/InstStyle.scss";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-export default function HomeIns() {
+
+
+
+export default function HomeIns() {  
   return (
+    
     <>
 
       <div className="container homeIns" style={{ height: "100px" ,width:"100%",color:"black" ,fontSize:"28px"}}>
@@ -20,18 +24,21 @@ export default function HomeIns() {
             </a>
           </li>
           <li style={{color:"black"}}>
-            2. The Navbar has Five buttons i.e Home,Want to donate ? ,Raise
-            Funds,Track History,About us .
+            2. The Navbar has five buttons i.e <b>Home, Want to donate ? , Raise
+            Funds, Track History, About us .</b>
           </li>
           <li style={{color:"black"}}>
-            3. For searching the requests and to donate click on want to donate
-            ? option.
+            3. For searching the requests and to donate click on <b>want to donate ? </b>
+             option.
           </li>
           <li style={{color:"black"}}>
-            4. To send request to for raising fund click on Raise fund option
+            4. To send request to for raising fund click on <b>Raise funds!</b> option
           </li>
           <li style={{color:"black"}}>
-            5. User can see his/her past transaction history in history tab.
+            5. User can see his/her past transaction history in <b>Track Your History</b> tab.
+          </li>
+          <li style={{color:"black"}}>
+            6. You can also donate using mobile Metamask app. Scan the QR code from Metamask wallet and donate the amount.
           </li>
         </ol>
         <Link to="/">

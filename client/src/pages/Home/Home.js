@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react"
 import "../Home/homeStyle.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import support from "../../assets/support.png"
 import history from "../../assets/history.png"
 import info from "../../assets/info.png"
 import donate from "../../assets/heart.png"
-const Home = () => (
+import { Context } from "../../Context"
+import  {contractAddress, contractABI} from  "../../utils/constants"
+
+let totalAmt=0;
+
+export default function Home()  {
+
+  const { web3, fundraiserStore } = useContext(Context)
+
+    useEffect(()=>{
+      const getTotalAmt= async () => {
+        try{
+          let fundraiserStore = new web3.eth.Contract(contractABI,contractAddress)
+          totalAmt=await fundraiserStore.methods.totalAmt().call()
+          //console.log(totalAmt)
+        }
+        catch(e){
+          console.log(e);
+        }
+      }
+      getTotalAmt();
+      console.log(totalAmt);
+      //console.log("Ajay");
+    },)
+  
+  return(
   <>
     <div className="main">
       <div className="container ">
+        <p>
+          <h4><b>Total Fund Raised={totalAmt} WEI</b></h4>
+        </p>
         <div className="home-content">
           <p className="first">
             Small Actions <span className="second">x Lots of People =</span>
@@ -41,4 +69,4 @@ const Home = () => (
   </>
 );
 
-export default Home;
+}

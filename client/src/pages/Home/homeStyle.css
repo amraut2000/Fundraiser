@@ -1,7 +1,7 @@
 .btn-home{
     display: flex;
     flex-direction: row;
-    margin-top: 95px;
+    margin-top: 50px;
     width: 100%;
 }
 button{

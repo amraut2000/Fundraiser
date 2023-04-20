@@ -89,12 +89,13 @@ function CreateFundraiser() {
       await contract.createFundraiser(
           toWei(goalAmount.toFixed(18)),
           toWei(minDonation.toFixed(18)),
-          //1681653414,
+          //1681903020,
           dateToBigInt(expiryDate),
           hostName.toString(),
           title.toString(),
           description.toString(),
-          recipientAddress.toString()
+          recipientAddress.toString(),
+          0
         )
         .send({ from: accounts[0] })
       // console.log(response)

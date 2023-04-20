@@ -15,6 +15,7 @@ function Fundraisers() {
       let fundraiser = new web3.eth.Contract(Fundraiser.abi, _address)
       let response = await fundraiser.methods.getDetails().call()
       //console.log(await fundraiser.methods.isFundraiserExpired().call())
+      
       //console.log(response)
 
       // try{
@@ -44,9 +45,7 @@ function Fundraisers() {
         fundraiserBalance: _fundraiserBalance,
         stage: _stage,
       }
-
-
-
+      //console.log(_fundraiserBalance)
       return detailsObj
     }
     // Loop through all fundraisers

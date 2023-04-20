@@ -56,6 +56,9 @@ function Track() {
         {/* <div>
             Enter your address to see transaction history!
         </div> */}
+        <div className="container">
+          <h1>Enter your address to see transaction history!</h1>
+        </div>
         <div
           className={
             searchBarValue !== ""

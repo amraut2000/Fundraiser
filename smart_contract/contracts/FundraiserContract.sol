@@ -2,16 +2,24 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 contract FundraiserStore {
+    uint256 public totalAmount=0;
     Fundraiser[] public fundraisers;
     
-    function createFundraiser(uint _goalAmount, uint _minDonation, uint256 _expiryDate, string memory _hostName, string memory _title, string memory _description, address _recipientAddress) public {
+    function createFundraiser(uint _goalAmount, uint _minDonation, uint256 _expiryDate, string memory _hostName, string memory _title, string memory _description, address _recipientAddress, uint256 _totalAmt) public {
         address hostAddress = msg.sender;
-        Fundraiser _fundraiser = new Fundraiser(_goalAmount, _minDonation, _expiryDate, _hostName, _title, _description, _recipientAddress, hostAddress);
+        Fundraiser _fundraiser = new Fundraiser(_goalAmount, _minDonation, _expiryDate, _hostName, _title, _description, _recipientAddress, hostAddress, _totalAmt);
         fundraisers.push(_fundraiser);
     }
     
     function getAll() view public returns(Fundraiser[] memory) {
         return fundraisers;
+    }
+
+    function totalAmt() public returns(uint _totalAmount) {
+        for (uint256 i=0; i<fundraisers.length; i++) {
+            totalAmount += fundraisers[i].getTotal();
+        }
+        return totalAmount;
     }
     
 }
@@ -29,13 +37,14 @@ contract Fundraiser {
     address hostAddress;
     address recipientAddress;
     address externalDonor;
+    uint256 public totalAmt=0;
     mapping(address => uint) donators;
     mapping(uint => address) donatorsAddress;
     enum Stage {Donation, Complete, Expired}
     Stage public stage = Stage.Donation;
     
     // 10000, 100, 1653067368, 'shanHost',  'Test Fundraiser', 'This is a test fundraiser for my first test', 0xdD870fA1b7C4700F2BD7f44238821C26f7392148
-    constructor(uint _goalAmount, uint _minDonation, uint256 _expiryDate, string memory _hostName, string memory _title, string memory _description, address _recipientAddress, address _hostAddress) {
+    constructor(uint _goalAmount, uint _minDonation, uint256 _expiryDate, string memory _hostName, string memory _title, string memory _description, address _recipientAddress, address _hostAddress, uint256 _totalAmt) {
         fundraiserId++;
         goalAmount = _goalAmount;
         minDonation = _minDonation;
@@ -46,6 +55,7 @@ contract Fundraiser {
         hostName = _hostName;
         hostAddress = _hostAddress;
         recipientAddress = _recipientAddress;
+        totalAmt= _totalAmt;
     }
     
     modifier onlyHost{
@@ -74,12 +84,10 @@ contract Fundraiser {
     function getDetails() public payable returns (uint _goalAmount, string memory _hostName, string memory _title, string memory _description, address _fundraiserAddress, uint _fundraiserBalance, uint _stage) {
         bool isExpired = isFundraiserExpired();
         if(isExpired) {
-            stage = Stage.Complete;
-            isCompleted = true;
-            releaseFunds();
-            //stage = Stage.Expired;  
-            //releaseFunds();
-            //refundAll();
+            if(address(this).balance>0){
+                payable(recipientAddress).transfer(address(this).balance);
+            }
+            stage = Stage.Expired;
         }
         return (goalAmount, hostName, title, description, address(this), address(this).balance, uint(stage));
     }
@@ -107,6 +115,7 @@ contract Fundraiser {
         } else {
             if(donators[msg.sender] == 0){
                 donators[msg.sender] += msg.value;
+                totalAmt+=msg.value;
                 donatorCount=donatorCount+1;
                 donatorsAddress[donatorCount] = msg.sender;    
             } else {
@@ -119,6 +128,10 @@ contract Fundraiser {
                 releaseFunds();
             }
         }
+    }
+
+    function getTotal() public returns(uint256 _totalAmt){
+        return totalAmt;
     }
     
     function refundAll() public payable validStage(Stage.Expired) {

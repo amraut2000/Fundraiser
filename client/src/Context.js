@@ -69,7 +69,6 @@ const ContextProvider = ({ children }) => {
         console.log("FundraiserList",fundraisersList)
         setFundraisers(fundraisersList)
 
-
       } catch (error) {
         alert(
           "Please install MetaMask extension to have access to complete features of the platform."

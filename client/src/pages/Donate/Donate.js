@@ -161,6 +161,13 @@ function Donate() {
                       <Link to={`/track/${fundraiserDetails.fundraiserAddress}`}>
                         <button>SEE HISTROY</button>
                       </Link>
+                      <a
+                      style={{ color: "blue" }}
+                      href="https://eth-converter.com/"
+                      >
+                      {" "}
+                      Ethereum Unit Converter
+                      </a>
                   </div>
                 </div>
                 <div className="right">
