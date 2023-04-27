@@ -26,7 +26,7 @@ export default function aboutUs() {
         <div className="container">
           <div className="guide">
             <h2 style={{ marginBottom: "20px" }}>Guided By</h2>
-            <div className="team commonstyle">
+            <div className="commonstyle">
               <h4>Prof.S.S.Shevtekar</h4>
             </div>
           </div>
