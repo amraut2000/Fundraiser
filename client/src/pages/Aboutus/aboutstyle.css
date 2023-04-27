@@ -39,3 +39,24 @@
 .team{
     width: 200px;
 }
+.linkedin-img{
+    margin-top:10px;
+    height: 40px;
+    margin: 5px;
+    justify-content: space-around;
+}
+.linkedin-img:hover{
+    cursor: pointer;
+}
+.social-img{
+   
+    align-items: center;
+    display: flex;
+}
+.commonstyle{
+    margin: 5px;
+}
+.guide{
+    width: -webkit-fill-available;
+    display: contents;
+}
