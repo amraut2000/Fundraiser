@@ -28,6 +28,8 @@ export default function aboutUs() {
             <h2 style={{ marginBottom: "20px" }}>Guided By</h2>
             <div className="commonstyle">
               <h4>Prof.S.S.Shevtekar</h4>
+              <p className="commonstyle">Mail :</p>
+              <p className="commonstyle">ssshevtekar@pict.edu  </p>
             </div>
           </div>
           <hr style={{width:" -webkit-fill-available"}}/>

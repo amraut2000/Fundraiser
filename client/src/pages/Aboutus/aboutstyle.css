@@ -58,6 +58,6 @@
     margin: 5px;
 }
 .guide{
-    width: -webkit-fill-available;
+    width: 100px;
     display: contents;
 }

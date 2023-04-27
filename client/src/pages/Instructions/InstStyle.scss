@@ -8,3 +8,14 @@ body{
     width: 600px;
     height: 600px;
 }
+.bottom{
+    display: flex;
+}
+.bottom button{
+    margin: 20px;
+}
+.bottom img{
+    height: 35px;
+    margin-right: 10px;
+    filter: invert(1);
+}
