@@ -1,0 +1,16 @@
+.feature-div{
+    margin-top: -90px;
+}
+
+.feature-div ul{
+    display: flex;
+    flex-direction: row;
+    margin-top: 115px;
+}
+.feature-div button{
+    margin: 22px;
+    font-size: 23px;
+    display: flex;
+    width: max-content;
+}
+

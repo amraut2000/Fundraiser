@@ -30,6 +30,7 @@
 .dev{
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 .dev li{
     width: 50px;
@@ -37,5 +38,26 @@
     justify-content: space-evenly;
 }
 .team{
-    width: 200px;
+    width: max-content;
+}
+.linkedin-img{
+    margin-top:10px;
+    height: 40px;
+    margin: 5px;
+    justify-content: space-around;
+}
+.linkedin-img:hover{
+    cursor: pointer;
+}
+.social-img{
+   
+    align-items: center;
+    display: flex;
+}
+.commonstyle{
+    margin: 5px;
+}
+.guide{
+    width: 100px;
+    display: contents;
 }

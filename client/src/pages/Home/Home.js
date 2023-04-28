@@ -41,22 +41,26 @@ export default function Home()  {
           <p className="first">
             Fundraising <span className="second"> Tracking </span>
           </p>
+<<<<<<< HEAD
           <h1 className="third">System</h1>
+=======
+          <h1 className="third">FUNDRAISER</h1>
+>>>>>>> f605b4a78df8d8451cbda018a8f28d12cf6440dd
         </div>
       </div>
 
       <div className="container btn-home" >
-        <button className="btn btn-success">
-          <Link to={`/browse`} style={{color:"white"}}> <img src={donate} style={{width:"30px",margin:"2px"}}></img> Want to Donate ?</Link>{" "}
+        <button className="btn btn-success" style={{}}>
+          <Link to={`/browse`} style={{color:"white",display:"flex",marginLeft:"5px"}}> <img src={donate} style={{width:"30px",margin:"4px",height:"30px"}}></img> Want to Donate ?</Link>{" "}
         </button>
         <button className="btn btn-success">
-          <Link to={`/create`} style={{color:"white"}}><img src={support} style={{width:"30px",margin:"2px"}}></img> Raise Funds!</Link>{" "}
+          <Link to={`/create`} style={{color:"white",display:"flex"}}><img src={support} style={{width:"30px",margin:"2px",height:"30px"}}></img> Raise Funds!</Link>{" "}
         </button>
         <button className="btn btn-success">
-          <Link to={`/track`} style={{color:"white"}}> <img src={history} style={{width:"30px",margin:"2px"}}></img> Track Your History.</Link>{" "}
+          <Link to={`/track`} style={{color:"white",display:"flex"}}> <img src={history} style={{width:"30px",margin:"2px",height:"30px"}}></img> Track Your History.</Link>{" "}
         </button>
         <button className="btn btn-success">
-          <Link to={`/aboutus`} style={{color:"white"}}> <img src={info} style={{width:"30px",marginRight:"4px"}}></img>About us</Link>{" "}
+          <Link to={`/aboutus`} style={{color:"white",display:"flex"}}> <img src={info} style={{width:"30px",marginRight:"4px",height:"30px"}}></img>About us</Link>{" "}
         </button>
         <div className="instr">
          <Link to={'/home-instr'}>
