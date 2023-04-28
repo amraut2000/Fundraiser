@@ -186,9 +186,9 @@ function Donate() {
                       <Link to={`/track/${fundraiserDetails.recipientAddress}`}>
                         {fundraiserDetails.recipientAddress}
                       </Link>
-                      <div>
+                      <div style={{justifyContent:"right"}}>
                         <p ><b>Scan To Donate</b></p>
-                        <img src={`https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${fundraiserDetails.fundraiserAddress}`}  alt="description"></img>
+                        <img style={{height:"100px", width: "100px", marginRight:"10px"}} src={`https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${fundraiserDetails.fundraiserAddress}`}  alt="description"></img>
                       </div>
                     </div>
                   </div>
