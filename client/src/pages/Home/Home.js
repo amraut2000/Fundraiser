@@ -39,9 +39,9 @@ export default function Home()  {
         </p>
         <div className="home-content">
           <p className="first">
-            Small Actions <span className="second">x Lots of People =</span>
+            Fundraising <span className="second"> Tracking </span>
           </p>
-          <h1 className="third">Big Change</h1>
+          <h1 className="third">System</h1>
         </div>
       </div>
 
