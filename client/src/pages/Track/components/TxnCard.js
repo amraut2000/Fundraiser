@@ -5,10 +5,19 @@ function TxnCard(props) {
 
   const getDate = (timestamp) => {
     const dateObj = new Date(parseInt(timestamp) * 1000)
+    let day=dateObj.getDate();
+    let month=dateObj.getMonth()+1;
+    let year=dateObj.getFullYear()
+    if(day<10){
+      day="0"+day
+    }
+    if(month<10){
+      month="0"+month
+    }
     const date =
-      dateObj.getDate() +
+      day +
       "/" +
-      (dateObj.getMonth() + 1) +
+      (month) +
       "/" +
       dateObj.getFullYear()
     return date
@@ -16,12 +25,24 @@ function TxnCard(props) {
 
   const getTime = (timestamp) => {
     const dateObj = new Date(parseInt(timestamp) * 1000)
+    let hrs=dateObj.getHours();
+    let mins=dateObj.getMinutes();
+    let secs=dateObj.getSeconds();
+    if(hrs<10){
+        hrs="0"+hrs
+    }
+    if(mins<10){
+      mins="0"+mins
+    }
+    if(secs<10){
+      secs="0"+secs;
+    }
     const time =
-      dateObj.getHours() +
+      hrs +
       ":" +
-      dateObj.getMinutes() +
+      mins +
       ":" +
-      dateObj.getSeconds()
+      secs
     return time
   }
 

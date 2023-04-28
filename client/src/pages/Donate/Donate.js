@@ -162,6 +162,7 @@ function Donate() {
                         <button>SEE HISTROY</button>
                       </Link>
                       <a
+                      target="_blank"
                       style={{ color: "blue" }}
                       href="https://eth-converter.com/"
                       >

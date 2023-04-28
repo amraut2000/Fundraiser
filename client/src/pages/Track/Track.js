@@ -14,11 +14,16 @@ function Track() {
   useEffect(() => {
     const init = async () => {
       const response = await fetch(
-        `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${trackAddress}&startblock=0&endblock=99999999&sort=asc&apikey=${process.env.REACT_APP_ETHERSCAN_API_KEY}`
+        `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${trackAddress}&startblock=0&endblock=99999999&sort=desc&apikey=${process.env.REACT_APP_ETHERSCAN_API_KEY}`
       )
       const data = await response.json()
+      //console.log("Status: ",data.status)
       if (data.status === "1") {
         setResult(data.result)
+        setIsLoading(false)
+      }
+      else if(data.status === "0"){
+        setResult()
         setIsLoading(false)
       } else {
         console.error("Invalid Address")
@@ -98,12 +103,10 @@ function Track() {
                 })
             ) : (
               <div className="error">
-                <h1>Invalid Address</h1>
+                <h1>No Transactions!</h1>
               </div>
             )
-          ) : (
-            ""
-          )}
+          ):("")}
         </div>
       </div>
     </>

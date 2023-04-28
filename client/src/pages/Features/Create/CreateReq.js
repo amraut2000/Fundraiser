@@ -14,7 +14,7 @@ export default function CreateReq() {
           <div className="create-card">
             <img src={Create1}></img>
             <h5 className="desc">
-            Click on the Wany to Donate buttons.You can find button on the
+            Click on the Raise Funds buttons.You can find button on the
               home page.
             </h5>
           </div>

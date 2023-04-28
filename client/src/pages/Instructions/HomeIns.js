@@ -21,6 +21,7 @@ export default function HomeIns() {
             installed in his device.If not you can download by using following
             link.
             <a
+              target="_blank"
               style={{ color: "blue" }}
               href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en"
             >
@@ -75,7 +76,7 @@ export default function HomeIns() {
               }}
             >
               <img src={Featuresimg} style={{marginTop:"0",display:"inline"}} alt="browse"></img>
-              Browse Features
+              Take A Tour!
             </button>
           </Link>
         </div>

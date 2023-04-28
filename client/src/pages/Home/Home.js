@@ -41,11 +41,7 @@ export default function Home()  {
           <p className="first">
             Fundraising <span className="second"> Tracking </span>
           </p>
-<<<<<<< HEAD
           <h1 className="third">System</h1>
-=======
-          <h1 className="third">FUNDRAISER</h1>
->>>>>>> f605b4a78df8d8451cbda018a8f28d12cf6440dd
         </div>
       </div>
 
