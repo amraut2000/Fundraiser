@@ -38,6 +38,9 @@ const Card = (props) => {
         History
       </a>
       <div className="progress-bar"></div>
+      <div>
+        <p style={{marginTop:10, color:"green"}}> {`${progressWidth}%`} donations received till date!</p>
+      </div>
       <div className="progress" style={{ width: `${progressWidth}%` }}></div>
     </div>
   )
