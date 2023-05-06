@@ -34,7 +34,7 @@ const Card = (props) => {
       <a className="donate" href={`/donate/${id}`}>
         Donate
       </a>
-      <a className="donate" href={`/track/${id}`}>
+      <a className="donate" href={`/track1/${id}`}>
         History
       </a>
       <div className="progress-bar"></div>

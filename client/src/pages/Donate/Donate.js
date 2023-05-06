@@ -158,7 +158,7 @@ function Donate() {
                     {donationMessage()} {heart}
                   </div>
                   <div> 
-                      <Link to={`/track/${fundraiserDetails.fundraiserAddress}`}>
+                      <Link to={`/track1/${fundraiserDetails.fundraiserAddress}`}>
                         <button>SEE HISTROY</button>
                       </Link>
                       <a

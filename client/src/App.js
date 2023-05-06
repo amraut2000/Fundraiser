@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import CreateFundraiser from "./pages/CreateFundraiser/CreateFundraiser";
 import Fundraisers from "./pages/Fundraisers/Fundraisers";
 import Track from "./pages/Track/Track";
+import Track1 from "./pages/Track1/Track1";
 import Donate from "./pages/Donate/Donate";
 import NotFound404 from "./pages/NotFound404/NotFound404";
 import Loader from "./components/Loader";
@@ -43,6 +44,9 @@ const App = () => {
         </Route>
         <Route path="/track/:trackAddress?">
           <Track />
+        </Route>
+        <Route path="/track1/:trackAddress?">
+          <Track1 />
         </Route>
         <Route path="/aboutus">
           <AboutUs></AboutUs>
