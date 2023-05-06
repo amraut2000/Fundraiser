@@ -155,7 +155,10 @@ function Donate() {
                     {fundraiserDetails.description}
                   </div>
                   <div className="donators">
+                    <h5 style={{color:"green"}}>
+                    Total funds received:
                     {donationMessage()} {heart}
+                    </h5>
                   </div>
                   <div> 
                       <Link to={`/track1/${fundraiserDetails.fundraiserAddress}`}>
@@ -176,14 +179,15 @@ function Donate() {
                     <div className="host">
                       Hosted by{" "}
                       <span>
-                        <Link to={`/track/${fundraiserDetails.hostAddress}`}>
+                        <Link to={`/track1/${fundraiserDetails.hostAddress}`}>
                           {fundraiserDetails.hostName}
                         </Link>
                       </span>
                     </div>
-                    <div className="recipient">
-                      Beneficiary:{" "}
-                      <Link to={`/track/${fundraiserDetails.recipientAddress}`}>
+                    <div className="recipient" >
+                      <p>After expiry date funds will be transfered to beneficiary:</p>
+                      {" "}
+                      <Link to={`/track1/${fundraiserDetails.recipientAddress}`} style={{color:"red"}}>
                         {fundraiserDetails.recipientAddress}
                       </Link>
                       <div style={{justifyContent:"right"}}>
