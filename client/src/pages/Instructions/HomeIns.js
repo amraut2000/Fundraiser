@@ -3,6 +3,7 @@ import "../../pages/Instructions/InstStyle.scss";
 import "./InstStyle.scss"
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Featuresimg from '../../assets/jigsaw.png'
+import Question from '../../assets/question.png'
 export default function HomeIns() {
   return (
     <>
@@ -79,6 +80,16 @@ export default function HomeIns() {
               Take A Tour!
             </button>
           </Link>
+          <a href="https://support.metamask.io/hc/en-us/articles/360015289452-How-to-create-an-additional-account-in-your-wallet#:~:text=Either%20tap%20the%20account%20icon,the%20account%20to%20change%20it." target="_blank">
+          <button className="btn btn-success" style={{
+            marginTop: "50px",
+            height: "50px",
+            width: "max-content",
+          }}>
+            <img src={Question} style={{marginTop:"0",display:"inline",filter: "invert(0)"}} alt="browse"></img>
+              How to create metemask account ?
+          </button>
+          </a>
         </div>
       </div>
     </>

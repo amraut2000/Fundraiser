@@ -219,6 +219,7 @@ function Donate() {
                         className="donationAmount"
                         placeholder="Donation amount (Wei)"
                         {...register("donationAmount", { required: true })}
+                        min={fundraiserDetails.minDonation}
                       />
                       {errors.donationAmount && (
                         <span>This field is required</span>

@@ -108,6 +108,18 @@ function Track() {
             )
           ):("")}
         </div>
+        <Link to="/">
+            <button
+              className="btn btn-success"
+              style={{
+                marginTop: "50px",
+                height: "50px",
+                width: "max-content",
+              }}
+            >
+              Go to Home
+            </button>
+          </Link>
       </div>
     </>
   )
