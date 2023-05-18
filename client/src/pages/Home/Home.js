@@ -46,18 +46,20 @@ export default function Home() {
           <button className="btn " style={{backgroundColor:"orange",color:"black"}}>
             <Link
               to={`/create`}
-              style={{ color: "white", display: "flex", marginLeft: "5px" ,color:"black"}}
+              style={{ color: "white", display: "flex", marginLeft: "5px" ,color:"black",alignItems: "center"}}
             >
               {" "}
               <img
                 src={donate}
                 style={{ width: "30px", margin: "4px", height: "30px",filter:"invert(0)"}}
               ></img>{" "}
-              Cancer
+              <span style={{marginTop:"5px"}}>
+                Cancer
+                </span> 
             </Link>{" "}
           </button>
           <button className="btn " style={{backgroundColor:"orange"}}>
-            <Link to={`/create`} style={{ color: "white", display: "flex" ,color:"black"}}>
+            <Link to={`/create`} style={{ color: "white", display: "flex" ,color:"black",alignItems: "center"}}>
               <img
                 src={donate}
                 style={{ width: "30px", margin: "2px", height: "30px" ,color:"black"}}
@@ -66,7 +68,7 @@ export default function Home() {
             </Link>{" "}
           </button>
           <button className="btn " style={{backgroundColor:"orange"}}>
-            <Link to={`/create`} style={{ color: "white", display: "flex" ,color:"black"}}>
+            <Link to={`/create`} style={{ color: "white", display: "flex" ,color:"black",alignItems: "center"}}>
               {" "}
               <img
                 src={donate}
@@ -76,7 +78,7 @@ export default function Home() {
             </Link>{" "}
           </button>
           <button className="btn " style={{backgroundColor:"orange"}}>
-            <Link to={`/create`} style={{ color: "white", display: "flex" ,color:"black"}}>
+            <Link to={`/create`} style={{ color: "white", display: "flex" ,color:"black",alignItems: "center"}}>
               {" "}
               <img
                 src={donate}
@@ -98,7 +100,7 @@ export default function Home() {
           <button className="btn btn-success" style={{}}>
             <Link
               to={`/browse`}
-              style={{ color: "white", display: "flex", marginLeft: "5px" }}
+              style={{ color: "white", display: "flex", marginLeft: "5px" ,alignItems: "center"}}
             >
               {" "}
               <img
@@ -109,7 +111,7 @@ export default function Home() {
             </Link>{" "}
           </button>
           <button className="btn btn-success">
-            <Link to={`/create`} style={{ color: "white", display: "flex" }}>
+            <Link to={`/create`} style={{ color: "white", display: "flex" ,alignItems: "center"}}>
               <img
                 src={support}
                 style={{ width: "30px", margin: "2px", height: "30px" }}
@@ -118,7 +120,7 @@ export default function Home() {
             </Link>{" "}
           </button>
           <button className="btn btn-success">
-            <Link to={`/track`} style={{ color: "white", display: "flex" }}>
+            <Link to={`/track`} style={{ color: "white", display: "flex",alignItems: "center" }}>
               {" "}
               <img
                 src={history}
@@ -128,7 +130,7 @@ export default function Home() {
             </Link>{" "}
           </button>
           <button className="btn btn-success">
-            <Link to={`/aboutus`} style={{ color: "white", display: "flex" }}>
+            <Link to={`/aboutus`} style={{ color: "white", display: "flex" ,alignItems: "center"}}>
               {" "}
               <img
                 src={info}
