@@ -44,7 +44,7 @@ function CreateFundraiser() {
       .test("isAddress", "Enter a valid ethereum address", function (value) {
         return web3.utils.isAddress(value)
       }),
-    description: yup.string().required().min(50),
+    description: yup.string().required().min(0),
   })
 
   const {
