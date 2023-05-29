@@ -10,6 +10,8 @@ const Card = (props) => {
   const progressWidth =
     (parseInt(fundraiserBalance) * 100) / parseInt(goalAmount)
 
+  const progress=progressWidth.toFixed(2)
+
   const toEther = (amount) => web3.utils.fromWei(amount, "ether")
   return (
     <div className="card">
@@ -39,7 +41,7 @@ const Card = (props) => {
       </a>
       <div className="progress-bar"></div>
       <div>
-        <p style={{marginTop:10, color:"green"}}> {`${progressWidth}%`} donations received till date!</p>
+        <p style={{marginTop:10, color:"green"}}> {`${progress}%`} donations received till date!</p>
       </div>
       <div className="progress" style={{ width: `${progressWidth}%` }}></div>
     </div>

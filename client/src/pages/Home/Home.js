@@ -41,7 +41,7 @@ export default function Home() {
             </h4>
           </p>
 
-            <p style={{fontSize:"20px",marginTop:"10px",textDecoration:"underline"}}>You can donate fund for following purpose:</p>
+            <p style={{fontSize:"20px",marginTop:"10px",textDecoration:"underline"}}>You can raise the funds for following purposes and for many more!</p>
           <div className="container btn-home" style={{marginTop:"-10px"}}>
           <button className="btn " style={{backgroundColor:"orange",color:"black"}}>
             <Link
@@ -54,7 +54,7 @@ export default function Home() {
                 style={{ width: "30px", margin: "4px", height: "30px",filter:"invert(0)"}}
               ></img>{" "}
               <span style={{marginTop:"5px"}}>
-                Cancer
+                Healthcare
                 </span> 
             </Link>{" "}
           </button>
@@ -64,7 +64,7 @@ export default function Home() {
                 src={donate}
                 style={{ width: "30px", margin: "2px", height: "30px" ,color:"black"}}
               ></img>{" "}
-              Coronary heart disease
+              Startups
             </Link>{" "}
           </button>
           <button className="btn " style={{backgroundColor:"orange"}}>
@@ -74,7 +74,7 @@ export default function Home() {
                 src={donate}
                 style={{ width: "30px", margin: "2px", height: "30px" ,color:"black"}}
               ></img>{" "}
-              Rheumatoid arthritis
+              NGO's
             </Link>{" "}
           </button>
           <button className="btn " style={{backgroundColor:"orange"}}>
@@ -84,7 +84,7 @@ export default function Home() {
                 src={donate}
                 style={{ width: "30px", marginRight: "4px", height: "30px" ,color:"black"}}
               ></img>
-              Cardio vascular disease
+              General Purpose
             </Link>{" "}
           </button>
         </div>
