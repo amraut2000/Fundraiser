@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import "../Home/homeStyle.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 import support from "../../assets/support.png";
 import history from "../../assets/history.png";
 import info from "../../assets/info.png";
@@ -10,7 +11,7 @@ import { contractAddress, contractABI } from "../../utils/constants";
 
 let totalAmt = 0;
 
-export default function Home() {
+export default function Home(props) {
   const { web3, fundraiserStore } = useContext(Context);
 
   useEffect(() => {
@@ -28,9 +29,14 @@ export default function Home() {
     };
     getTotalAmt();
     console.log(totalAmt);
-    //console.log("Ajay");
-  });
 
+  });
+  
+  // const [healthcare,sethealthcare]=useState("");
+  const healthcare={
+    title:"For Health Care"
+  };
+  console.log(healthcare);
   return (
     <>
       <div className="main">
@@ -47,6 +53,7 @@ export default function Home() {
             <Link
               to={`/create`}
               style={{ color: "white", display: "flex", marginLeft: "5px" ,color:"black",alignItems: "center"}}
+              state={healthcare}
             >
               {" "}
               <img
@@ -78,7 +85,7 @@ export default function Home() {
             </Link>{" "}
           </button>
           <button className="btn " style={{backgroundColor:"orange"}}>
-            <Link to={`/create`} style={{ color: "white", display: "flex" ,color:"black",alignItems: "center"}}>
+            <Link to={`/create`} style={{ color: "white", display: "flex" ,color:"black",alignItems: "center"}}  >
               {" "}
               <img
                 src={donate}

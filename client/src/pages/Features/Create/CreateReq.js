@@ -5,7 +5,9 @@ import Create2 from "../../../assets/create-2.jpeg";
 import Create3 from "../../../assets/create-3.jpeg";
 import Create4 from "../../../assets/create-4.jpeg";
 import { Link } from "react-router-dom/cjs/react-router-dom";
-export default function CreateReq() {
+
+export default function CreateReq(props) {
+
   return (
     <div className="container createReq">
       <ol>

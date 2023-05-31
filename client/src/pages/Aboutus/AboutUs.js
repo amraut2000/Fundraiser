@@ -1,13 +1,14 @@
 import React from "react";
 import "../Aboutus/aboutstyle.css";
 import linkedin from "../../assets/linkedin.png";
-import mail from "../../assets/gmail.png";
-
+import abt from "../../assets/man.png";
+import dev from "../../assets/coding.png";
 export default function aboutUs() {
   return (
     <>
       <div className="main1">
         <h3 className="abtHead">About Us</h3>
+
       </div>
       <section style={{ height: "200px" }}>
         <div className="abtbody ">
@@ -29,11 +30,18 @@ export default function aboutUs() {
             <div className="commonstyle">
               <h4>Prof.S.S.Shevtekar</h4>
               <p className="commonstyle">Mail :</p>
-              <p className="commonstyle">ssshevtekar@pict.edu  </p>
+              <p className="commonstyle">ssshevtekar@pict.edu </p>
             </div>
           </div>
-          <hr style={{width:" -webkit-fill-available"}}/>
-          <h2>Development Team</h2>
+          <hr style={{ width: " -webkit-fill-available" }} />
+          
+            <div style={{ display: "flex" }}>
+              <h2>
+                Development Team
+              </h2>
+                <img className="dev-icon" src={dev} alt="" srcset=""/>
+            </div>
+          
           <hr style={{ borderBottom: "20px" }} />
           <div className="dev">
             <li>

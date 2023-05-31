@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { Context } from "../../Context"
 import { yupResolver } from "@hookform/resolvers/yup"
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min"
 import * as yup from "yup"
 import TxnLoader from "../../components/TxnLoader"
 
@@ -22,7 +23,9 @@ const formatDate = (date) => {
   return yyyy + "-" + mm + "-" + dd
 }
 
-function CreateFundraiser() {
+function CreateFundraiser(props) {
+
+  // console.log(propDetails);
   const { web3, accounts, contract, updateFundraisers } = useContext(Context)
   const toWei = (amount) => web3.utils.toWei(amount, "ether")
 
@@ -109,13 +112,10 @@ function CreateFundraiser() {
     updateFundraisers()
   }
 
-  // if (
-  //   typeof web3 === "undefined" ||
-  //   typeof accounts === "undefined" ||
-  //   typeof contract === "undefined"
-  // ) {
-  //   return <section>Loading...</section>
-  // } else {
+
+    const location=useLocation();
+    const propDetails=location.state;
+    console.log(propDetails);
   return (
     <>
       {isTxnLoading ? <TxnLoader /> : ""}
@@ -126,7 +126,7 @@ function CreateFundraiser() {
           </a>
         ) : (
           <section>
-            <h1>Create Fundraiser</h1>
+            <h1>Create Fundraiser </h1>
             <form onSubmit={handleSubmit(onCreateSubmit)}>
               <div className="grid-item">
                 <input
